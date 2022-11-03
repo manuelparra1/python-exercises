@@ -91,6 +91,7 @@ print(not_same_check)
 #bonus neither the username or password can start or end with whitespace
 
 print("White Space Check")
+
 def white_space_check(user_name, pass_word):
     if (user_name.startswith(" ") or user_name.endswith(" ") or pass_word.startswith(" ") or user_name.endswith(" ")):
         return True
