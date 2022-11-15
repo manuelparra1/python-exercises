@@ -11,7 +11,7 @@ def overtime_check(hours, pay):
 print('Day of the week?')
 day = input()
 
-if day.lower() == 'monday':
+if day.lower().strip() == 'monday':
     print("Yes it's Monday.")
 else:
     print("It's not Monday")
@@ -21,7 +21,7 @@ else:
 print('What day of the week is it?')
 day = input()
 
-if day.lower() in ['saturday','sunday']:
+if day.lower().strip() in ['saturday','sunday']:
     print("Weekend baby!")
 else:
     print("Back to the grind...")
@@ -57,10 +57,12 @@ while i <= 100:
     print(i+"\n")
     i+=2
 #         2a-V. Alter your loop to count backwards by 5's from 100 to -10
+
 i=100
 while i >= -10:
     print(str(i)+"\n")
     i-=5
+
 #         VI. Create a while loop that starts at 2, 
 #             and displays the number squared on each 
 #             line while the number is less than 1,000,000.
@@ -68,7 +70,7 @@ while i >= -10:
 i=2
 while i < 1_000_000:
     print(i)
-    i=i**2
+    i**=2
 #         2a-VI. Write a loop that uses print to create 
 #             the output shown below
 i=100
@@ -83,8 +85,7 @@ while i >=5:
 print('Enter a number: ')
 num_mult = int(input())
 
-i=1
-while i<=10:
+for i in range(1,11):
     print(str(i) + " x " + str(num_mult) + " = " + str(i*num_mult))
     i+=1
 
@@ -106,8 +107,7 @@ for i in range(1,10):
 #            for a positive integer. Next write a loop that 
 #            prints out the numbers from the number the user 
 #            entered down to 1.
-print("Enter positive number: ")
-count_down = int(input())
+count_down = int(input("Enter positive number: "))
 
 while count_down >= 1:
     if int(count_down) < 1:
@@ -115,15 +115,16 @@ while count_down >= 1:
     print(count_down)
     count_down -= 1
 
-#      2c-II. The input function can be used to prompt 
-#             for input and use that input in your python code. 
-#             Prompt the user to enter a positive number and write a 
+#      2c-II. Prompt the user to enter a positive number and write a 
 #             loop that counts from 0 to that number. 
 #             (Hints: first make sure that the value the user
 #             entered is a valid number, also note that the input 
 #             function returns a string, so you'll need to convert 
 #             this to a numeric type.)
+#
 #    N  O  T    D  O   N  E
+#
+
 i=1
 while i < 50:
     print("Enter a positive + odd number between 1 & 50: ")
@@ -243,6 +244,25 @@ while i<=num_in:
 
 #Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).#
 
+print("Enter a grade number: \"1-100\"")
+num_grd=int(input())
+let_grd="Z"
+if (num_grd >= 88 and num_grd<=100):
+    let_grd = "A"
+    print(let_grd)
+elif (num_grd >= 80 and num_grd<=87):
+    let_grd = "B"
+    print(let_grd)
+elif (num_grd >= 67 and num_grd<=79):
+    let_grd = "C"
+    print(let_grd)
+elif (num_grd >= 60 and num_grd<=66):
+    let_grd = "D"
+    print(let_grd)
+elif (num_grd >= 0 and num_grd<=59):
+    let_grd = "F"
+    print(let_grd)
+
 #  6. Create a list of dictionaries where each dictionary 
 #     represents a book that you have read. Each dictionary 
 #     in the list should have the keys title, author, and 
@@ -264,9 +284,11 @@ for index in range(len(books)):
 #        then loop through your books list and 
 #        print out the titles of all the books 
 #        n that genre.
-print("Enter a genre: ")
-genre_in=input()
+
+genre_in=input("Enter a genre: ")
+
 print("\n")
+
 for index in range(len(books)):
     if (books[index]["genre"].lower()) == genre_in:
         for key in books[index]:

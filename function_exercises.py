@@ -1,14 +1,18 @@
+#if __name__ == '__main__':
+	#print('Hello, World!')
+
 #  1. Define a function named is_two. It should accept 
 #     one input and return True if the passed input 
 #     is either the number or the string 2, False otherwise.
 
 def is_two(num):
-    if isinstance(num, int):
-        return num == 2
-    elif num.isdigit():
-        return int(num) == 2
-    else:
-        return False
+	if isinstance(num, int):
+		return num == 2
+	elif num.isdigit():
+		return int(num) == 2
+	else:
+		return False
+	
 is_two("49")
 
 
@@ -20,10 +24,10 @@ is_two("49")
 #     is a vowel, False otherwise.
 
 def is_vowel(vow):
-    if (0 < len(vow)< 2) and (isinstance(vow, str)):
-        return vow in ['a','e','i','o','u']
-    else:
-        return False
+	if (0 < len(vow)< 2) and (isinstance(vow, str)):
+		return vow in ['a','e','i','o','u']
+	else:
+		return False
 
 input_word = input("Enter a vowel: ")
 is_vowel(input_word)
@@ -37,10 +41,10 @@ is_vowel(input_word)
 #     is a consonant, False otherwise. Use your 
 #     is_vowel function to accomplish this.
 def is_consonant(letter):
-    if isinstance(letter, str) and (not any(i.isdigit() for i in letter )):
-        return not is_vowel(letter)
-    else:
-        return False
+	if isinstance(letter, str) and (not any(i.isdigit() for i in letter )):
+		return not is_vowel(letter)
+	else:
+		return False
 
 input_word = input("Enter a consonant: ")
 is_consonant(input_word)
@@ -55,8 +59,8 @@ is_consonant(input_word)
 #     the word if the word starts with a consonant.
 
 def title_case(word):
-    if is_consonant(word[0]):
-        return word.capitalize()
+	if is_consonant(word[0]):
+		return word.capitalize()
 word1="snapple"
 word2="apple"
 print(title_case(word1))
@@ -77,9 +81,7 @@ def calculate_tip(pcent,bill):
 
 calculate_tip(.2, 36.15)
 
-
 # In[ ]:
-
 
 #  6. Define a function named apply_discount. 
 #     It should accept a original price, and 
@@ -87,9 +89,9 @@ calculate_tip(.2, 36.15)
 #     price after the discount is applied.
 
 def apply_discount(price,percent):
-    discount=(percent/100)*price
-    
-    return round((price - discount) , 2)
+	discount=(percent/100)*price
+
+	return round((price - discount) , 2)
 
 price=380.00
 percentage=30
@@ -105,12 +107,12 @@ apply_discount(price, percentage)
 #     input, and return a number as output.
 
 def handle_commas(broken_number):
-    fixed_number = ''.join([i for i in broken_number if i.isdigit()])
-    
-    return fixed_number
+	fixed_number = ''.join([i for i in broken_number if i.isdigit()])
+
+	return fixed_number
 
 def add_numbers(num1,num2):
-    return num1+num2
+	return num1+num2
 
 commas_number = "2,530,389"
 
@@ -127,16 +129,16 @@ handle_commas(commas_number)
 #     letter grade associated with that number (A-F).
 
 def get_letter_grade(num_grd):
-    if 90 <= num_grd <=100:
-        return "A"
-    elif 80 <= num_grd <=89:
-        return "B"
-    elif 70 <= num_grd <=79:
-        return "C"
-    elif 60 <= num_grd <=69:
-        return "D"
-    else:
-        return "F"
+	if 90 <= num_grd <=100:
+		return "A"
+	elif 80 <= num_grd <=89:
+		return "B"
+	elif 70 <= num_grd <=79:
+		return "C"
+	elif 60 <= num_grd <=69:
+		return "D"
+	else:
+		return "F"
 
 get_letter_grade(87)
 
@@ -149,7 +151,7 @@ get_letter_grade(87)
 #     string with all the vowels removed.
 
 def remove_vowels(word):
-    return ''.join([i for i in word if i.lower() not in ['a','e','i','o','u']])
+	return ''.join([i for i in word if i.lower() not in ['a','e','i','o','u']])
 
 incoming_word="apple"
 remove_vowels(incoming_word)
@@ -163,10 +165,10 @@ fixed = ""
 
 for i in word:
 # Strips all numbers and symbols. Spaces stay. 1 Fell swoop lowercases.
-    if (i.isalnum() or i == " ") and not i.isdigit():
-        fixed+=i.lower()
-    else:
-        pass
+	if (i.isalnum() or i == " ") and not i.isdigit():
+		fixed+=i.lower()
+	else:
+		pass
 # Strips leading & trailing spaces. Afterwards replaces middle spaces.
 
 fixed = fixed.strip().replace(" ","_")
@@ -191,17 +193,17 @@ print(fixed)
 #     - % Completed will become completed
 
 def normalize_name(bad_line):
-    fixed = ""
+	fixed = ""
 
-    for i in bad_line:
-        if (i.isalnum() or i == " ") and not i.isdigit():
-            fixed+=i.lower()
-        else:
-            pass
+	for i in bad_line:
+		if (i.isalnum() or i == " ") and not i.isdigit():
+			fixed+=i.lower()
+		else:
+			pass
 
-    fixed = fixed.strip().replace(" ","_")
+	fixed = fixed.strip().replace(" ","_")
 
-    return fixed
+	return fixed
 
 normalize_name(" 88track 88Track.    ")
 
@@ -218,18 +220,18 @@ normalize_name(" 88track 88Track.    ")
 #         cumulative_sum([1, 2, 3, 4]) returns [1, 3, 6, 10]
 
 def cumulative_sum(inputs):
-    from itertools import accumulate
+	from itertools import accumulate
 
-    return list(accumulate(inputs))
+	return list(accumulate(inputs))
 
 cumulative_sum([1,1,1])
 
-output=[]
-sum=0
-for loop
-+=
-append output
-return ouput
+#output=[]
+#sum=0
+#for loop
+#+=
+#append output
+#return ouput
 
 
 # In[ ]:
@@ -243,32 +245,32 @@ return ouput
 #         that does the opposite.
 
 def thwelveto24(time_twelve):
-    
-    hour = time_twelve.split(':')[0]
-    minutes = time_twelve.split(':')[1][0] + time_twelve.split(':')[1][1]
-    am_pm = time_twelve.split(':')[-1][-2] + time_twelve.split(':')[-1][-1]
-    
-    if am_pm == 'am':
-        if int(hour) < 10:
-            return '0' + hour + minutes
-        else:
-            return hour + minutes
-    else:
-        return str(int(hour)+12) + minutes
+
+	hour = time_twelve.split(':')[0]
+	minutes = time_twelve.split(':')[1][0] + time_twelve.split(':')[1][1]
+	am_pm = time_twelve.split(':')[-1][-2] + time_twelve.split(':')[-1][-1]
+
+	if am_pm == 'am':
+		if int(hour) < 10:
+			return '0' + hour + minutes
+		else:
+			return hour + minutes
+	else:
+		return str(int(hour)+12) + minutes
 
 thwelveto24("10:45am")
 
 def twentyfour_to12(time_24):
-    
-    hour = time_24[0] + time_24[1]
-    minutes = time_24[2] + time_24[3]
-    
-    if int(hour) > 12:
-        return str(int(hour)-12) + ":" + minutes + "pm"
-    elif hour == '12':
-        return hour + ":" + minutes + "pm"
-    else:
-        return hour + ":" + minutes + "am"
+
+	hour = time_24[0] + time_24[1]
+	minutes = time_24[2] + time_24[3]
+
+	if int(hour) > 12:
+		return str(int(hour)-12) + ":" + minutes + "pm"
+	elif hour == '12':
+		return hour + ":" + minutes + "pm"
+	else:
+		return hour + ":" + minutes + "am"
 
 print(thwelveto24("10:45pm"))
 print(twentyfour_to12("1245"))
@@ -286,10 +288,9 @@ print(twentyfour_to12("1245"))
 
 def col_index(column_name_string):
 
-    
-    
-    index = 'Test'
-    return index
+
+
+	index = 'Test'
+	return index
 
 col_index('AB')
-
